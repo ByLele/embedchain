@@ -1,0 +1,17 @@
+import os
+os.environ["OPENAI_API_KEY"] = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1UaEVOVUpHTkVNMVFURTRNMEZCTWpkQ05UZzVNRFUxUlRVd1FVSkRNRU13UmtGRVFrRXpSZyJ9.eyJodHRwczovL2FwaS5vcGVuYWkuY29tL3Byb2ZpbGUiOnsiZW1haWwiOiJoZ2ZjYm4zNzRAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJodHRwczovL2FwaS5vcGVuYWkuY29tL2F1dGgiOnsidXNlcl9pZCI6InVzZXItVldzZmF5N1lWT3BPUk9qRmtvSEkzbGlFIn0sImlzcyI6Imh0dHBzOi8vYXV0aDAub3BlbmFpLmNvbS8iLCJzdWIiOiJhdXRoMHw2MzkwOTMwYWRhNWJiNzQ1YWE5NGY4ZjIiLCJhdWQiOlsiaHR0cHM6Ly9hcGkub3BlbmFpLmNvbS92MSIsImh0dHBzOi8vb3BlbmFpLm9wZW5haS5hdXRoMGFwcC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjg4MjkxODI0LCJleHAiOjE2ODk1MDE0MjQsImF6cCI6IlRkSkljYmUxNldvVEh0Tjk1bnl5d2g1RTR5T282SXRHIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCBtb2RlbC5yZWFkIG1vZGVsLnJlcXVlc3Qgb3JnYW5pemF0aW9uLnJlYWQgb3JnYW5pemF0aW9uLndyaXRlIn0.yNnKyiRSKnKVwBlAep97j3o2tOe_IOZsBkQN3alDMiF6hcZWX0Ar0Xh4k1SiD0lDjnZUfi_uRJ8j5Gkq-FeHteWtcJLPYUCM0Ku8Vbm9fAepo_6MHpiiSmLn2EJ7Z4aCENGbT6ZTXnoLwDEd6lvjgATPWADWduMNK_AH_A2j64BwSzzs7WXKtVDvHgOHdQbujGOL2mdmSQm0BEAsLvX-kLRfXIwXwE90Y4DG4P58apBbx9aAFUDhshIN8NX8xNRrBsxLB7JO-3fi05jCZQE-4oq6IMG5xCi7sOeNWdHz1t0XC7KaEizVV8x_q-iUbrEXEyhJJbqogHkc98teGZlHlw"
+from embedchain import App
+
+naval_chat_bot = App()
+
+# Embed Online Resources
+#naval_chat_bot.add("youtube_video", "https://www.youtube.com/watch?v=3qHkcs3kG44")
+naval_chat_bot.add("pdf_file", "https://navalmanack.s3.amazonaws.com/Eric-Jorgenson_The-Almanack-of-Naval-Ravikant_Final.pdf")
+naval_chat_bot.add("web_page", "https://nav.al/feedback")
+naval_chat_bot.add("web_page", "https://nav.al/agi")
+
+# Embed Local Resources
+naval_chat_bot.add_local("qna_pair", ("Who is Naval Ravikant?", "Naval Ravikant is an Indian-American entrepreneur and investor."))
+
+naval_chat_bot.query("What unique capacity does Naval argue humans possess when it comes to understanding explanations or concepts?")
+# answer: Naval argues that humans possess the unique capacity to understand explanations or concepts to the maximum extent possible in this physical reality.
